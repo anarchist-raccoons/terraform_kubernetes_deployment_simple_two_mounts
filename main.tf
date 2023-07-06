@@ -67,6 +67,12 @@ resource "kubernetes_deployment" "default" {
           claim_name = var.pvc_claim_name
           }
         }
+        volume {
+          name = "pvc-azuredisk"
+          persistent_volume_claim {
+          claim_name = "pvc-azuredisk"
+          }
+        }
       }
     }
   }
